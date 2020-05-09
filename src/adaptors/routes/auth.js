@@ -37,6 +37,9 @@ router.get('/slack/callback',
   (req, res)=>{
     const account = req.account;
     // console.log( account );
+    console.log('/slack/callback =>');
+    console.log(req);
+    console.log(account);
     store.createOrUpdateWorkspace(
       account.team_id,
       account.team_name,
@@ -58,6 +61,9 @@ router.get('/slackPersonal/callback',
   passport.authorize('slack-personal', { failureRedirect: '/auth/register/fail' }),
   (req, res) => {
     const account = req.account;
+    console.log('/slackPersonal/callback =>');
+    console.log(req);
+    console.log(account);
     store.addOrUpdateUserToken(
       account.team_id,
       account.user_id,

@@ -8,7 +8,8 @@ async function sendWebhook(webhookUrl, body){
     json: true,
     body: body,
   };
-
+  console.log('sendWebhook =>');
+  console.log(requestOptions);
   return request(requestOptions)
     .then((e)=>{  console.log(e.ok); console.log("webhook sent."); return e; })
     .catch((e)=>{ console.log("fail"); console.log(e); return e; })
@@ -25,7 +26,8 @@ function sendMessage(token, body){
     },
     body: body
   };
-
+  console.log('sendMessage =>');
+  console.log(requestOptions);
   return request(requestOptions)
     .then((e)=>{  console.log(e.ok); console.log("message sent."); return e;})
     .catch((e)=>{ console.log("fail"); console.log(e); return e;})
